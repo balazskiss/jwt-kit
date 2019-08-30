@@ -36,7 +36,7 @@ public struct JWT {
         self.payload = payload
 
         let encoded = try [headers, payload].map { json in
-            return try json.makeBytes().base64URLEncoded
+            return try json.makeBytes2().base64URLEncoded
         }
         let message = encoded[0] + [JWT.separator] + encoded[1]
 
@@ -166,9 +166,9 @@ extension JWT: SignatureVerifiable {
                 + rawToken.payload
         }
 
-        return try headers.makeBytes().base64URLEncoded
+        return try headers.makeBytes2().base64URLEncoded
             + [JWT.separator]
-            + payload.makeBytes().base64URLEncoded
+            + payload.makeBytes2().base64URLEncoded
     }
 
     public func createSignature() throws -> Bytes {
