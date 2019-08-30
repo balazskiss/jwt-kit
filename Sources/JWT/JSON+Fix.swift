@@ -34,6 +34,9 @@ extension JSON {
         if #available(OSX 10.13, *) {
             options.insert(.sortedKeys)
         }
+        #if os(Linux)
+            options.insert(.sortedKeys)
+        #endif
 
         let data = try JSONSerialization.data(
             withJSONObject: wrapped.foundationJSON,
