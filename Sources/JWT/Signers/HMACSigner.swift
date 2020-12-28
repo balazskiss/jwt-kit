@@ -1,4 +1,4 @@
-import Crypto
+import OpenCrypto
 
 public final class HS256: HMACSigner {
     public let key: Bytes

@@ -11,7 +11,7 @@ let package = Package(
         .package(url: "https://github.com/vapor/json.git", .upToNextMajor(from: "2.0.0")),
     ],
     targets: [
-    	.target(name: "JWT", dependencies: ["Crypto", "JSON"]),
+    	.target(name: "JWT", dependencies: ["OpenCrypto", "JSON"]),
     	.testTarget(name: "JWTTests", dependencies: ["JWT"]),
     ]
 )

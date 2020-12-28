@@ -1,5 +1,5 @@
 import CTLS
-import Crypto
+import OpenCrypto
 
 public enum HashMethod {
     case sha256

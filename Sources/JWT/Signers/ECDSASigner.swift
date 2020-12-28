@@ -1,6 +1,6 @@
 import CTLS
 import Foundation
-import Crypto
+import OpenCrypto
 
 public final class ES256: ECDSASigner {
     public let curve = NID_X9_62_prime256v1
